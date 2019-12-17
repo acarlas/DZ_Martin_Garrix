@@ -1,0 +1,111 @@
+package com.studentapp.cucumber.steps;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import net.serenitybdd.junit.runners.SerenityRunner;
+import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Step;
+
+
+@RunWith(SerenityRunner.class)
+
+public class LoginSteps {
+@Managed  WebDriver driver;
+
+
+@Test
+
+@Given("^User navigates to mixcloud website$")
+public void user_navigates_to_mixcloud_website() {
+driver.get("https://www.mixcloud.com/");
+this.driver.manage().window().maximize();
+}
+
+@Step
+@When("^User clicks on the login button on homepage$")
+public void user_clicks_on_the_login_button_on_homepage() throws Throwable {
+driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/section/div[3]/div/div/header/div/div[3]/div/span[1]")).click();
+}
+
+@Step
+@When("^User enters a valid username \"([^\"]*)\"$")
+public void user_enters_a_valid_username(String username) {
+driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/section/div[1]/span[16]/div/div[2]/div/div/div/form/div[1]/div/input")).sendKeys(acarlas62@gmail.com);
+
+
+}
+@Step
+@When("^User enters a valid password \"([^\"]*)\"$")
+public void user_enters_a_valid(String password) {
+driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/section/div[1]/span[16]/div/div[2]/div/div/div/form/div[2]/div/input")).sendKeys(Ivan402836);
+
+}
+@Step
+@When("^User clicks on the login button$")
+public void user_clicks_on_the_login_button() throws Throwable {
+Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@id=\"react-root\"]/div/section/div[1]/span[16]/div/div[2]/div/div/div/form/button/span")).click();
+
+}
+@Step
+@Then("^User should be logged in$")
+public void user_should_be_logged_in() throws Throwable {
+Thread.sleep(5000);
+}
+@Step
+@When("^User should be logged in$")
+public void user_clicks_search_bar() throws Throwable {
+Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@id="react-root"]/div/section/div[4]/div/div/header/div/div[2]/input")).sendKeys(Martin Garrix);
+}
+
+@When("^User should be logged in$")
+public void user_clicks_search_bar() throws Throwable {
+Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@id="react-root"]/div/section/div[4]/div/div/header/div/div[2]/input")).sendKeys(Martin Garrix);
+}
+
+@When("^User enters a valid data$")
+public void user_enters_a_valid_data(String data) throws Throwable {
+ Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@id="react-root"]/div/section/div[4]/div/div/div[1]/div/div/section/div[1]/div[2]/div[2]/section/div/ul/li[1]/span/b/span[1]/a")).click();
+}
+
+@When("^User goes to the page Martin Garrix$")
+public void user_clicks_on_the_login_button_on_page() throws Throwable {
+Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@id="react-root"]/div/section/div[4]/div/div/div/div/div[2]/section/div/div[1]/div/button")).click();
+}
+
+@When("User^ Click on the button Play all$")
+public void user_clicks_on_the_button_on_page() throws Throwable {
+Thread.sleep(5000);
+driver.findElement(By.xpath("//*[@id="react-root"]/div/section/div[5]/div/div/div[1]/div[4]/span/span")).click();
+}
+
+@When("User^ Click on the button Favorite$")
+public void user_clicks_on_the_button_on_page() throws Throwable {
+Thread.sleep(5000);
+driver.findElement(By.xpath("//*[@id="react-root"]/div/section/div[4]/div/div/header/div/div[3]/div[1]/span/div/div/ul/li[1]/a")).click();
+}
+
+@When ("User^ Click on the button$")
+public void user_clicks_on_page() throws Throwable {
+Thread.sleep(3000);
+driver.findElement(By.xpath("//*[@id="react-root"]/div/section/div[4]/div/div/div/div/div[4]/main/div[1]/div/div/section"));
+}
+
+@When ("User^ Click on the button")
+public void user_clicks_on_page() throws Throwable {
+Thread.sleep(5000);
+driver.findElement(By.xpath("//*[@id="react-root"]/div/section/div[4]/div/div/div/div/div[4]/main/div[1]/div/div/section/span")).click();
+}
+
